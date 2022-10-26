@@ -8,12 +8,12 @@ const useAxios = (url, options = {}) => {
   const [response, setResponse] = useState([]);
 
   // after the first render, fetch our data
-  const setData = async (name='') => {
-      console.log(name)
-      if (!name){
-          url = url
-      }else{
-          url = url + name
+  const setData = async (e) => {
+    console.log('string'  === typeof(e))
+      
+      if ('string'  === typeof(e)){
+          
+          url = url + e
       }
  
     try {
